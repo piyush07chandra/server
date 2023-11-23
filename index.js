@@ -20,7 +20,28 @@ main()
 const app=express()
 const port=3000
 
-app.get('/',(req,res)=>{
-   res.send("ok connected")
+
+let userSchema=new mongoose.Schema({
+   id:mongoose.Schema.Types.ObjectId,
+   first_name:'string',
+   last_name:"String",
+   email:"String",
+   gender:"String",
+   avatar:"String",
+   domain:"String",
+   available:"String"
+})
+const User = mongoose.model('User', userSchema);
+
+app.get('/',async(req,res)=>{
+   
+   try {
+      const users = await User.find();
+      res.json(users);
+      res.send("ok connected")
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } 
 })
 app.listen(port ,()=>console.log("server is running on ",port))
