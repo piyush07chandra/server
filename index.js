@@ -2,7 +2,7 @@
 // import express from 'express'
 
 
-const express=reqire("express")
+const express=require("express")
 const mongoose=require('mongoose')
 
 
