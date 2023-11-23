@@ -1,9 +1,9 @@
-import mongoose from 'mongoose'
-import express from 'express'
+// import mongoose from 'mongoose'
+// import express from 'express'
 
 
-// const express=reqire("express")
-// const mongoose=require('mongoose')
+const express=reqire("express")
+const mongoose=require('mongoose')
 
 
 const main =async()=>{
