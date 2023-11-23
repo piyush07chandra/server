@@ -8,7 +8,7 @@ const mongoose=require('mongoose')
 
 const main =async()=>{
     try {
-        await mongoose.connect(`mongodb+srv://piyush:LzXIr0Z8D3Vje19c@web-ecomerce.3wphvcu.mongodb.net/?retryWrites=true&w=majority`)
+        await mongoose.connect(`mongodb://127.0.0.1:27017/heliverse`)
         console.log("database connected")
      }
      catch (error){
