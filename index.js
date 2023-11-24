@@ -44,5 +44,5 @@ app.get('/',async(req,res)=>{
       res.status(500).json({ error: 'Internal Server Error' });
     } 
 })
-const port=9000
+const port=27017
 app.listen(port ,()=>console.log("server is running on ",port))
