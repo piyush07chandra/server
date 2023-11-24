@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 User
@@ -261,3 +262,8 @@ node_modules/
 
 # Ignore .env file
 .env
+=======
+node_modules/
+
+.env
+>>>>>>> 2db38f3d7eda03dea08d949bb45ccd944906c0b0
