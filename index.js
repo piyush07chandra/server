@@ -46,4 +46,4 @@ app.get('/',async(req,res)=>{
       res.status(500).json({ error: 'Internal Server Error' });
     } 
 })
-app.listen(port ,()=>console.log("server is running on ",port))
+app.listen(PORT ,()=>console.log(`server is running on ${PORT}`))
