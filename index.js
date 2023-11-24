@@ -17,8 +17,7 @@ const main =async()=>{
 }
 main()
 
-const app=express()
-const port=3000
+
 
 
 let userSchema=new mongoose.Schema({
@@ -32,6 +31,7 @@ let userSchema=new mongoose.Schema({
    available:"String"
 })
 const User = mongoose.model('User', userSchema);
+const app=express()
 
 app.get('/',async(req,res)=>{
    
@@ -44,4 +44,5 @@ app.get('/',async(req,res)=>{
       res.status(500).json({ error: 'Internal Server Error' });
     } 
 })
+const port=9000
 app.listen(port ,()=>console.log("server is running on ",port))
