@@ -4,11 +4,12 @@
 
 const express=require("express")
 const mongoose=require('mongoose')
+const BASE_URL=process.env.BASE_URL
 
 
 const main =async()=>{
     try {
-        await mongoose.connect(`mongodb://127.0.0.1:27017/heliverse`)
+        await mongoose.connect(`mongodb://${BASE_URL}/heliverse`)
         console.log("database connected")
      }
      catch (error){
