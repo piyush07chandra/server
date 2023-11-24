@@ -4,11 +4,11 @@
 
 const express=require("express")
 const mongoose=require('mongoose')
-
+const BASE_URL=process.env.BASE_URL
 
 const main =async()=>{
     try {
-        await mongoose.connect(`mongodb://127.0.0.1:27017/heliverse`)
+        await mongoose.connect(`${BASE_URL}/heliverse`)
         console.log("database connected")
      }
      catch (error){
@@ -18,7 +18,7 @@ const main =async()=>{
 main()
 
 const app=express()
-const port=3000
+const PORT=process.env.PORT || 3000
 
 
 let userSchema=new mongoose.Schema({
@@ -44,4 +44,4 @@ app.get('/',async(req,res)=>{
       res.status(500).json({ error: 'Internal Server Error' });
     } 
 })
-app.listen(port ,()=>console.log("server is running on ",port))
+app.listen(port ,()=>console.log(`server is running on ${PORT} `))
