@@ -255,15 +255,3 @@ nvm use 14
 Always check the official Node.js website or the Node.js GitHub repository for the most up-to-date information on Node.js versions. The community actively maintains and updates the Node.js project, and new releases are made regularly.
 
 User
- ExperimentalWarning: AbortController is an experimental feature. This feature could change at any time
-
-# Ignore node_modules directory
-node_modules/
-
-# Ignore .env file
-.env
-=======
-node_modules/
-
-.env
->>>>>>> 2db38f3d7eda03dea08d949bb45ccd944906c0b0
