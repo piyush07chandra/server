@@ -27,13 +27,13 @@ const PORT=process.env.PORT || 3000
 
 let userSchema=new mongoose.Schema({
    id:mongoose.Schema.Types.ObjectId,
-   first_name:'string',
-   last_name:"String",
+   // first_name:'string',
+   // last_name:"String",
    email:"String",
-   gender:"String",
-   avatar:"String",
-   domain:"String",
-   available:"String"
+   // gender:"String",
+   // avatar:"String",
+   // domain:"String",
+   // available:"String"
 })
 const User = mongoose.model('User', userSchema);
 
