@@ -5,12 +5,16 @@
 const express=require("express")
 const mongoose=require('mongoose')
 const app=express()
-const BASE_URL=process.env.BASE_URL
+
 
 
 const main =async()=>{
     try {
-        await mongoose.connect(`mongodb://${BASE_URL}/heliverse`)
+        await mongoose.connect(`mongodb://127.0.0.1:27017/heliverse`, { 
+         useNewUrlParser: true, 
+         useUnifiedTopology: true,
+         serverSelectionTimeoutMS: 5000 // Set to a higher value if needed
+     })
         console.log("database connected")
      }
      catch (error){
@@ -20,7 +24,7 @@ const main =async()=>{
 main()
 
 
-const PORT=process.env.PORT || 3000
+const PORT= 3000
 
 
 let userSchema=new mongoose.Schema({
