@@ -49,8 +49,8 @@ app.get('/',(req,res)=>{
       //   const explainResult = await User.find({}).explain('executionStats');
       //   console.log('Execution Stats:', explainResult.executionStats);
 
-        // Send users as JSON response
-        res.json(users);
+        
+        res.text(users);
       res.send("ok connected")
     } catch (error) {
       console.error('Error fetching users:', error);
