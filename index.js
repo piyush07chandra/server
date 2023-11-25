@@ -40,8 +40,15 @@ const User = mongoose.model('User', userSchema);
 app.get('/',async(req,res)=>{
    
    try {
-      const users = await User.find();
-      res.json(users);
+        // Fetch users
+        const users = await User.find();
+
+        // Log execution statistics
+        const explainResult = await User.find({}).explain('executionStats');
+        console.log('Execution Stats:', explainResult.executionStats);
+
+        // Send users as JSON response
+        res.json(users);
       res.send("ok connected")
     } catch (error) {
       console.error('Error fetching users:', error);
