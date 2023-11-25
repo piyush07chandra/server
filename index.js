@@ -12,9 +12,7 @@ const app=express()
 const main =async()=>{
    const URL=`mongodb+srv://piyush:LzXIr0Z8D3Vje19c@web-ecomerce.3wphvcu.mongodb.net/?retryWrites=true&w=majority`;
     try {
-        await mongoose.connect((URL), { 
-         serverSelectionTimeoutMS: 5000 // Set to a higher value if needed
-     })
+        await mongoose.connect(URL)
         console.log("database connected")
      }
      catch (error){
