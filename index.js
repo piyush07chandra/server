@@ -39,18 +39,18 @@ let userSchema=new mongoose.Schema({
 })
 const User = mongoose.model('User', userSchema);
 
-app.get('/',(req,res)=>{
+app.get('/',async(req,res)=>{
    
    try {
         // Fetch users
-        const users =  User.find();
+        const users = await User.find();
 
         // Log execution statistics
       //   const explainResult = await User.find({}).explain('executionStats');
       //   console.log('Execution Stats:', explainResult.executionStats);
 
         
-        res.send(users);
+        res.json(users);
       res.send("ok connected")
     } catch (error) {
       console.error('Error fetching users:', error);
