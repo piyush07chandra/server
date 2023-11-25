@@ -24,7 +24,7 @@ const main =async()=>{
 main()
 
 
-const PORT= 3000
+const PORT=process.env.PORT || 3000
 
 
 let userSchema=new mongoose.Schema({
