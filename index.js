@@ -27,30 +27,30 @@ main()
 const PORT=process.env.PORT || 3000
 
 
-let userSchema=new mongoose.Schema({
-   id:mongoose.Schema.Types.ObjectId,
-   first_name:'string',
-   last_name:"String",
-   email:"String",
-   gender:"String",
-   avatar:"String",
-   domain:"String",
-   available:"String"
-})
-const User = mongoose.model('User', userSchema);
+// let userSchema=new mongoose.Schema({
+//    id:mongoose.Schema.Types.ObjectId,
+//    first_name:'string',
+//    last_name:"String",
+//    email:"String",
+//    gender:"String",
+//    avatar:"String",
+//    domain:"String",
+//    available:"String"
+// })
+// const User = mongoose.model('User', userSchema);
 
-app.get('/',async(req,res)=>{
+app.get('/',(req,res)=>{
    
    try {
         // Fetch users
-        const users = await User.find();
+      //   const users = await User.find();
 
         // Log execution statistics
-        const explainResult = await User.find({}).explain('executionStats');
-        console.log('Execution Stats:', explainResult.executionStats);
+      //   const explainResult = await User.find({}).explain('executionStats');
+      //   console.log('Execution Stats:', explainResult.executionStats);
 
         // Send users as JSON response
-        res.json(users);
+      //   res.json(users);
       res.send("ok connected")
     } catch (error) {
       console.error('Error fetching users:', error);
