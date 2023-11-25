@@ -11,8 +11,6 @@ const app=express()
 const main =async()=>{
     try {
         await mongoose.connect(`mongodb://127.0.0.1:27017/heliverse`, { 
-         useNewUrlParser: true, 
-         useUnifiedTopology: true,
          serverSelectionTimeoutMS: 5000 // Set to a higher value if needed
      })
         console.log("database connected")
