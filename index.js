@@ -50,7 +50,7 @@ app.get('/',(req,res)=>{
       //   console.log('Execution Stats:', explainResult.executionStats);
 
         
-        res.text(users);
+        res.send(users);
       res.send("ok connected")
     } catch (error) {
       console.error('Error fetching users:', error);
