@@ -4,8 +4,6 @@ const app=express()
 const cors=require('cors')
 
 
-
-
 app.use(cors({
    origin: 'https://stately-macaron-f3e57e.netlify.app',
    methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
