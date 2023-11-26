@@ -1,19 +1,11 @@
-// import mongoose from 'mongoose'
-// import express from 'express'
-
-
 const express=require("express")
 const mongoose=require('mongoose')
 const app=express()
 
-
-
-
 const main =async()=>{
-   // const URL=`mongodb+srv://piyush:LzXIr0Z8D3Vje19c@web-ecomerce.3wphvcu.mongodb.net/?retryWrites=true&w=majority`;
     try {
         await mongoose.connect(`mongodb+srv://piyush:LzXIr0Z8D3Vje19c@web-ecomerce.3wphvcu.mongodb.net/?retryWrites=true&w=majority`, { 
-         serverSelectionTimeoutMS: 5000 // Set to a higher value if needed
+         serverSelectionTimeoutMS: 5000 
      })
         console.log("database connected")
      }
@@ -29,29 +21,21 @@ const PORT=process.env.PORT || 3000
 
 let userSchema=new mongoose.Schema({
    id:mongoose.Schema.Types.ObjectId,
-//    first_name:'string',
-//    last_name:"String",
+   first_name:'string',
+   last_name:"String",
    email:"String",
-//    gender:"String",
-//    avatar:"String",
-//    domain:"String",
-//    available:"String"
+   gender:"String",
+   avatar:"String",
+   domain:"String",
+   available:"String"
 })
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('workors',userSchema);
 
 app.get('/',async(req,res)=>{
    
    try {
-        // Fetch users
         const users = await User.find();
-
-        // Log execution statistics
-      //   const explainResult = await User.find({}).explain('executionStats');
-      //   console.log('Execution Stats:', explainResult.executionStats);
-
-        
         res.json(users);
-      res.send("ok connected")
     } catch (error) {
       console.error('Error fetching users:', error);
       res.status(500).json({ error: 'Internal Server Error' });
